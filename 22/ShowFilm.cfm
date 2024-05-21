@@ -6,7 +6,7 @@
     SELECT FilmID, MovieTitle, PitchText, Summary
     FROM Films
 </CFQUERY>
-<!--- Use Query-of-Queries to grab this film?s information --->
+<!--- Use Query-of-Queries to grab this film?s information a--->
 <CFQUERY DBTYPE="query" NAME="GetFilm">
     SELECT * FROM GetFilms
     WHERE FilmID = #URL.FilmID#
