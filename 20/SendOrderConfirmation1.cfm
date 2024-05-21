@@ -33,6 +33,9 @@
  m.MerchName
 </cfquery>
 
+<cfdump  var="#getOrder#">
+<cfabort>
+
 <!--- Re-Query the GetOrders query to find total $ spent --->
 <!--- The DBTYPE='Query' invokes CF's 'Query Of Queries' --->
 <cfquery dbtype='query' name='getTotal'>

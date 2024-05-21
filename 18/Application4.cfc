@@ -1,5 +1,5 @@
 <!--- 
- Filename: Application.cfc (The 'Application Component')
+ Filename: Application4.cfc (The 'Application Component')
  Created by: Raymond Camden (ray@camdenfamily.com)
  Purpose: Sets 'constant' variables and includes consistent header
 --->
@@ -11,6 +11,7 @@
   
   <cferror type='Request' template='ErrorRequest.cfm' 
            mailto='webmaster@orangewhipstudios.com'>
+
 
   <cffunction name='onApplicationStart' returnType='boolean' output='false'>
     <!--- When did the application start? --->

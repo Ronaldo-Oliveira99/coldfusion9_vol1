@@ -36,14 +36,23 @@
  m.MerchName
 </cfquery>
 
+<cfdump  var="#cgi.http_host#">
+<cfdump  var="#cgi.server_name#">
+<cfabort>
+
+
 <!--- Display an error message if query returned no records --->
 <cfif getOrder.recordCount eq 0>
  <cfthrow message='Failed to obtain order information.'
  detail='Either the Order ID was incorrect, or order has no detail records.'>
 <!--- Display an error message if email blank or not valid ---> 
-<cfelseif isValid('email', getOwer.email)>
- <cfthrow message='Failed to obtain order information.'
- detail='Email addresses need to have an @ sign and at least one 'dot'.'>
+<cfelseif isValid('email', getOrder.email)>
+ <cfthrow message='Failed to obtain order information.' 
+ detail="Email addresses need to have an @ sign and at least one 'dot'.">
+
+<!---  <cfthrow message='Failed to obtain order information.'
+ detail="Nossa parça estou colocando um erro no coldfusion !."> --->
+
 </cfif>
 
 <!--- Query the GetOrders query to find total $$ --->

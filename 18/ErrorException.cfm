@@ -27,13 +27,15 @@ Thank you.<br>
 <!--- Send an email message to site administrator --->
 <!--- (or whatever address provided to <cferror>) --->
 <cfif error.mailTo neq ''>
- <cfmail to='#error.mailTo#' from='errorsender@orangewhipstudios.com'
+ <!--- <cfmail to='#error.mailTo#' from='ronaldoluiz747@gmail.com'
  subject='Error on Page #error.Template#'>
  Error Date/Time: #error.dateTime#
  User's Browser: #error.browser#
  URL Parameters: #error.queryString#
- Previous Page: #error.HTTPReferer#
- ------------------------------------
- #error.diagnostics#
- </cfmail>
+ Previous Page: #error.HTTPReferer# --->
+ ------------------------------------<br>
+ <cfoutput>
+    #error.diagnostics#
+ </cfoutput>
+<!---  </cfmail> --->
 </cfif>

@@ -11,7 +11,7 @@
 
 <cfoutput>
  You started your visit at:
- #cookie.TimeVisitStart#<br>
+ #cookie.VisitStart#<br>
 </cfoutput>
 
 </body>

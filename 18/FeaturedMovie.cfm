@@ -23,10 +23,19 @@
 
 <!--- Pick the first movie in the list to show right now --->
 <cfset thisMovieID = listFirst(application.MovieList)>
+
+<!--- <cfdump  var="#application.movieList#"><br> --->
+
+<!--- <cfdump  var="#thisMovieID#"><br> --->
+
 <!--- Re-save the list, as all movies *except* the first --->
 <cfset application.movieList = listRest(application.movieList)>
+
 <!--- Now that we have chosen the film to 'Feature', --->
 <!--- Get all important info about it from database. --->
+<!--- <cfdump  var="#application.movieList#"> --->
+
+
 <cfquery name='GetFilm'>
  SELECT 
  MovieTitle, Summary, Rating, 

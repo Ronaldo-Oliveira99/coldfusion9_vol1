@@ -6,8 +6,8 @@ Created:     01/01/2010
 --->
 
 <!--- Form field validation --->
-<cfparam name='FORM.LoginID' type='integer'>
-<cfparam name='FORM.LoginPassword'>
+<!--- <cfparam name='FORM.LoginID' type='integer'>
+<cfparam name='FORM.LoginPassword'> --->
 
 <html>
 

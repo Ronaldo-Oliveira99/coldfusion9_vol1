@@ -22,23 +22,25 @@
 <!--- If an OrderID was passed, get details for the order --->
 <!--- Query must check against ContactID for security --->
 <cfif showDetail>
- <cfquery name='getDetail'>
- SELECT m.MerchName, oi.ItemPrice, oi.OrderQty
- FROM Merchandise m, MerchandiseOrdersItems oi 
- WHERE m.MerchID = oi.ItemID
- AND oi.OrderID =  
- <cfqueryparam cfsqltype='cf_sql_integer' value='#url.orderid#'>
- AND oi.OrderID IN 
- (SELECT o.OrderID FROM MerchandiseOrders o
- WHERE o.ContactID =  
- <cfqueryparam cfsqltype='cf_sql_integer' value='#session.auth.contactID#'>)
- </cfquery>
- 
- <!--- If no Detail records, don't show detail --->
- <!--- User may be trying to 'hack' URL parameters --->
- <cfif getDetail.recordCount eq 0>
- <cfset showDetail = False>
- </cfif>
+    <cfquery name='getDetail'>
+        SELECT m.MerchName, oi.ItemPrice, oi.OrderQty
+        FROM Merchandise m, MerchandiseOrdersItems oi 
+        WHERE m.MerchID = oi.ItemID
+        AND oi.OrderID =  
+        <cfqueryparam cfsqltype='cf_sql_integer' value='#url.orderid#'>
+        AND oi.OrderID IN 
+        (
+            SELECT o.OrderID FROM MerchandiseOrders o
+            WHERE o.ContactID =  
+            <cfqueryparam cfsqltype='cf_sql_integer' value='#session.auth.contactID#'>
+        )
+    </cfquery>
+
+    <!--- If no Detail records, don't show detail --->
+    <!--- User may be trying to 'hack' URL parameters --->
+    <cfif getDetail.recordCount eq 0>
+        <cfset showDetail = False>
+    </cfif>
 </cfif>
 
 
@@ -68,65 +70,75 @@
 
 <!--- Display orders in a simple HTML table --->
 <table border='1' width='300' cellpadding='5' cellspacing='2'>
- <!--- Column headers --->
- <tr>
- <th>Date Ordered</th>
- <th>Items</th>
- </tr>
+    <!--- Column headers --->
+    <tr>
+        <th>Date Ordered</th>
+        <th>Items</th>
+    </tr>
 
- <!--- Display each order as a table row --->
- <cfoutput query='getOrders'>
- <!--- Determine whether to show details for this order --->
- <!--- Show Down arrow if expanded, otherwise Right --->
- <cfset isExpanded = showDetail and (getOrders.OrderID eq url.orderID)>
- <cfset arrowIcon = iif(isExpanded, ''ArrowDown.gif'', ''ArrowRight.gif'')>
- 
- <tr>
- <td>
- <!--- Link to show order details, with arrow icon --->
- <a href='OrderHistory2.cfm?OrderID=#orderID#'>
- <img src='../images/#arrowIcon#' width='16' height='16' border='0'>
- #dateFormat(orderDate, 'mmmm d, yyyy')#
- </a>
- </td>
- <td>
- <strong>#itemCount#</strong>
- </td>
- </tr>
+    <!--- Display each order as a table row --->
+    <cfoutput query='getOrders'>
+        <!--- Determine whether to show details for this order --->
+        <!--- Show Down arrow if expanded, otherwise Right --->
+        <cfset isExpanded = showDetail and (getOrders.OrderID eq url.orderID)>
 
- <!--- Show details for this order, if appropriate ---> 
- <cfif isExpanded>
- <cfset orderTotal = 0>
- <tr>
- <td colspan='2'>
- 
- <!--- Show details within nested table --->
- <table width='100%' cellspacing='0' border='0'>
- <!--- Nested table's column headers --->
- <tr>
- <th>Item</th><th>Qty</th><th>Price</th>
- </tr>
+        <!---  <cfdump  var="#isExpanded#"> --->
 
- <!--- Show each ordered item as a table row --->
- <cfloop query='getDetail'>
- <cfset orderTotal = orderTotal + itemPrice>
- <tr>
- <td>#merchName#</td>
- <td>#orderQty#</td>
- <td>#dollarFormat(itemPrice)#</td>
- </tr>
- </cfloop>
+        <cfset ArrowDown = 'ArrowDown.gif' >
+        <cfset ArrowRight = 'ArrowRight.gif' >
 
- <!--- Last row in nested table for total ---> 
- <tr>
- <td colspan='2'><b>Total:</b></td>
- <td><strong>#dollarFormat(orderTotal)#</strong></td>
- </tr>
- </table>
- </td>
- </tr>
- </cfif>
- </cfoutput>
+        <cfset arrowIcon = iif(isExpanded, 'ArrowDown', 'ArrowRight')>
+        <!---  <cfdump  var="#isExpanded#">
+        <cfabort> --->
+
+        <tr>
+            <td>
+                <!--- Link to show order details, with arrow icon --->
+                <a href='OrderHistory2.cfm?OrderID=#orderID#'>
+                    <img src='../images/#arrowIcon#' width='16' height='16' border='0'>
+                        #dateFormat(orderDate, 'mmmm d, yyyy')#
+                </a>
+            </td>
+            <td>
+                <strong>#itemCount#</strong>
+            </td>
+        </tr>
+
+        <!--- Show details for this order, if appropriate ---> 
+        <cfif isExpanded>
+            <cfset orderTotal = 0>
+            <tr>
+                <td colspan='2' <!--- style="color:red" --->>
+                
+                    <!--- Show details within nested table --->
+                    <table width='100%' cellspacing='0' border='0'>
+                        <!--- Nested table's column headers --->
+                        <tr>
+                            <th>Item</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                        </tr>
+
+                        <!--- Show each ordered item as a table row --->
+                        <cfloop query='getDetail'>
+                            <cfset orderTotal = orderTotal + itemPrice>
+                            <tr>
+                                <td>#merchName#</td>
+                                <td>#orderQty#</td>
+                                <td>#dollarFormat(itemPrice)#</td>
+                            </tr>
+                        </cfloop>
+
+                        <!--- Last row in nested table for total ---> 
+                        <tr>
+                            <td colspan='2'><b>Total:</b></td>
+                            <td><strong>#dollarFormat(orderTotal)#</strong></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </cfif>
+    </cfoutput>
 </table>
 
 </body>

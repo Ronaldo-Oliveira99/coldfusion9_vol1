@@ -1,10 +1,15 @@
 <!--- 
-  Filename:     LoginForm.cfm
+  Filename:     UserLoginForm.cfm
   Created by:   Nate Weiss (NMW)
   Purpose:      Presented whenever a user has not logged in yet
   Please Note:  Included by Application.cfm
 --->
 
+ 
+<!--- <cfdump  var="caiu aq"><br>
+<cfdump  var="#cgi.script_name#"><br>
+<cfdump  var="#cgi.query_string#">
+<cfabort> --->
 
 <!--- This template defines the PassUrlVars() and PassFormVars() functions --->
 <!--- These functions are user defined and can be adapted as needed --->

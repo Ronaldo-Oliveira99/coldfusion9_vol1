@@ -3,10 +3,22 @@
  Created by: Nate Weiss (NMW)
  Please Note Maintains 'last' search via Client variables
 --->
+<!--- <cfquery name='movies' datasource='sql_coldfusion'>
+  SELECT *
+  FROM cliente 
+  </cfquery>
+  <cfdump  var="#movies#"> --->
 
+ <!---  <cfdump  var="#client#">
+  <cfdump  var="#session#"> --->
+  <cfdump  var="#form#">
+  <cfdump  var="#URLSessionFormat("SearchForm2.cfm")#">
 <!--- 
   When user submits form, save search criteria in Client variable 
 --->
+
+
+
 <cfif isDefined('form.searchCriteria')>
  <cfset client.lastSearch = form.searchCriteria>
  <cfset client.lastMaxRows = form.searchMaxRows>

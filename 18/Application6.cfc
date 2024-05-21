@@ -1,5 +1,5 @@
 <!--- 
- Filename: Application.cfc (The 'Application Component')
+ Filename: Application6.cfc (The 'Application Component')
  Created by: Raymond Camden (ray@camdenfamily.com)
  Purpose: Sets 'constant' variables and includes consistent header
 --->
@@ -33,6 +33,7 @@
   <cffunction name='onRequestStart' returnType='boolean' output='true'>
     <!--- Any variables set here can be used by all our pages --->
     <cfset request.companyName = 'Orange Whip Studios'>
+    <cfset request.dataSource = this.dataSource>
 
     <!--- Display our Site Header at top of every page --->
     <cfinclude template='SiteHeader.cfm'>
@@ -52,15 +53,18 @@
     <cfargument name='eventName' type='string' required='true'>
     
     <!--- Use the cflog tag to record info on the error --->
+    <!--- <cfdump  var="#arguments#">
+    <cfabort> --->
+
     <cfif arguments.eventName is ''>
       <cflog file='#this.name#' type='error' 
              text='#arguments.exception.message#'>
     <cfelse>
-      <cflog file='#this.name#' type='error'
- text='Error in Method [#arguments.eventName#] #arguments.exception.message#'>
+        <cflog file='#this.name#' type='error' text='Error in Method [#arguments.eventName#] #arguments.exception.message#'>
      </cfif>
      
      <!--- Let the <cferror> tags do their job. --->
+
      <cfthrow object='#arguments.exception#'>
                  
   </cffunction>

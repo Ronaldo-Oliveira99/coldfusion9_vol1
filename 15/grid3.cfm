@@ -19,6 +19,8 @@ Created:     01/01/2010
                                 {cfgridpagesize},
                                 {cfgridsortcolumn},
                                 {cfgridsortdirection})'>
+                                
+        <!--- cfgridpage, cfgridpagesize, cfgridsortcolumn, cfgridsortdirection sao variaceis especiais do cf--->
    <cfgridcolumn name='FilmID'
                  display='no'>
    <cfgridcolumn name='MovieTitle'
@@ -30,7 +32,10 @@ Created:     01/01/2010
    <cfgridcolumn name='Summary'
                  header='Summary'
                  width='400'>
+                 
 </cfgrid>
+
+
 </cfform>
 
 <!--- Page footer --->

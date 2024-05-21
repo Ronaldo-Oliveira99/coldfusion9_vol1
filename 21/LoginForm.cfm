@@ -7,6 +7,16 @@
 
 <!--- If the user is now submitting 'Login' form, --->
 <!--- Include 'Login Check' code to validate user --->
+
+
+<!--- 
+--->
+<!--- <cfdump  var="LoginForm"><br>
+<cfdump  var="#isDefined('form.UserLogin')#"><br>
+<cfdump  var="#cgi.script_name#"><br>
+<cfdump  var="#cgi.query_string#"><br> --->
+<!--- <cfabort> --->
+
 <cfif isDefined('form.UserLogin')> 
  <cfinclude template='LoginCheck.cfm'>
 </cfif>

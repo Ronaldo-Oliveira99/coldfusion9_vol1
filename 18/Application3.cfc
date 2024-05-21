@@ -1,5 +1,5 @@
 <!--- 
- Filename: Application.cfc (The 'Application Component')
+ Filename: Application3.cfc (The 'Application Component')
  Created by: Raymond Camden (ray@camdenfamily.com)
  Purpose: Sets 'constant' variables and includes consistent header
 --->
@@ -20,8 +20,7 @@
     <cfargument name='appScope' required='true'> 
 
     <!--- Log how many minutes the application stayed alive --->
-    <cflog file='#this.name#' text=
-'App ended after #dateDiff('n',arguments.appScope.appStarted,now())# minutes.'>
+    <cflog file='#this.name#' text='App ended after #dateDiff('n',arguments.appScope.appStarted,now())# minutes.'>
 
   </cffunction>
   

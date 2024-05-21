@@ -26,6 +26,8 @@ Created:     01/01/2010
              value='RatingID'
              bindonload='true' />
   </td>
+
+  <!---  bindonload forca a chamada--->
   <td>
    Movie:<br>
    <cfselect name='FilmID'

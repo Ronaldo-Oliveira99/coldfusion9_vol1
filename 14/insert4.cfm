@@ -4,6 +4,8 @@ Author:      Ben Forta (ben@forta.com)
 Description: Table row insertion demo
 Created:     01/01/2010
 --->
+<!--- <cfdump  var="#form#">
+<cfabort> --->
 
 <!--- Insert movie --->
 <cfinsert datasource='ows'

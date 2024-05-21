@@ -1,5 +1,5 @@
 <!--- 
- Filename: Index.cfm 
+ Filename: Index1.cfm 
  Created by: Nate Weiss (NMW)
  Please Note Header and Footer are automatically provided
 --->
@@ -17,4 +17,7 @@
  as well as our latest and greatest new releases. 
  Have fun!<br>
  </blockquote>
+
 </cfoutput>
+
+<!--- <cfdump  var="#this.name#"> --->

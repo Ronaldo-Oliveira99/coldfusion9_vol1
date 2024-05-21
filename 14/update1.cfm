@@ -123,7 +123,7 @@ ORDER BY RatingID
   <td>
    <cfinput type='Text'
             name='DateInTheaters'
-            value='#DateFormat(film.DateInTheaters, 'MM/DD/YYYY')#'
+            value='#DateFormat(film.DateInTheaters, 'dd/MM/YYYY')#'
             message='RELEASE DATE must be a valid date!'
             required='NO'
             validate='date'

@@ -1,5 +1,5 @@
 <!--- 
- Filename: Index.cfm 
+ Filename: Index2.cfm 
  Created by: Nate Weiss (NMW)
  Please Note Header and Footer are automatically provided
 --->
@@ -14,8 +14,8 @@
  be able to find out about all our classic films
  from the golden age of Orange Whip Studios,
  as well as our latest and greatest new releases. 
- Have fun!<br>#x#
+ Have fun!<br>
 </cfoutput>
 
 <!--- Show a 'Featured Movie' --->
-<cfinclude template='FeaturedMovie.cfm'>
+<cfinclude template='FeaturedMovie3.cfm'>

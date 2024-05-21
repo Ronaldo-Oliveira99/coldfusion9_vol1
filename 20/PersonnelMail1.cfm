@@ -19,8 +19,12 @@
 <!--- If the user is submitting the Form... --->
 <cfif isDefined('form.subject')>
 
-  <!--- We do not want ColdFusion to suppress whitespace here --->
-  <cfprocessingdirective suppressWhitespace='No'>
+    <!---
+    We do not want ColdFusion to suppress whitespace here 
+    usada  para  desativar  o  comportamento  padrão  de  
+    supressão  de  espaços  em  branco  do  ColdFusion.
+    --->
+    <cfprocessingdirective suppressWhitespace='No'>
  
 <!--- Send the mail message, based on form input --->
 <cfmail

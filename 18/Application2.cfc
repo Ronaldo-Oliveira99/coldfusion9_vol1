@@ -1,5 +1,5 @@
 <!--- 
- Filename: Application.cfc (The 'Application Component')
+ Filename: Application2.cfc (The 'Application Component')
  Created by: Raymond Camden (ray@camdenfamily.com)
  Purpose: Sets 'constant' variables and includes consistent header
 --->

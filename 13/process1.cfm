@@ -5,12 +5,23 @@ Description: Basic server-side validation
 Created:     01/01/2010
 --->
 
+<!--- <cfparam name='FORM.LoginID' type='binary'>
+ --->
+
 <html>
 
 <head>
   <title>Orange Whip Studios - Intranet</title>
 </head>
 
+<cfdump  var="#IsNumeric(LoginID)#"><br>
+
+<!--- são a mesma coisa --->
+<cfdump  var="#Trim(LoginPassword) IS ''#"><br>
+
+<!--- mais performatico qnd é comparação com numero --->
+<cfdump  var="#not Len(Trim(LoginPassword))#"><br>
+<cfdump  var="#Len(Trim(LoginPassword)) is 0#">
 <body>
 
 <!--- Page header --->

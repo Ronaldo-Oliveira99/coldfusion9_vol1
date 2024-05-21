@@ -31,7 +31,8 @@ Created:     01/01/2010
                required='yes'
                message='A valid numeric ID is required!'
                validate='integer'
-               validateAt='onServer'>
+               validateAt='onServer'
+               >
     </td>
   </tr>
   <tr>
@@ -42,7 +43,7 @@ Created:     01/01/2010
       <cfinput type='password'
                name='LoginPassword'
                maxlength='20'
-               required='yes'
+               required='no'
                message='Password is required!'
                validateAt='onServer'>
     </td>
@@ -54,7 +55,62 @@ Created:     01/01/2010
                value='Login'>
     </td>
  </tr>
+
+
 </table>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<tr>
+  <td align='right'>
+    Red:
+  </td>
+  <td align='center'>
+
+    <cfinput type='text'
+       name='color_r'
+       validate='regex'
+       pattern='[A-Fa-f0-9]{ 2,}'
+       message='RGB value must be 00-FF'
+       size='2'
+       maxlength='2'>
+  </td>
+  <td align='right'>
+    Red:
+  </td>
+  <td align='center'>
+
+    <cfinput type='text'
+       name='color_g'
+       validate='regex'
+       pattern='[A-Fa-f0-9]{ 2,}'
+       message='RGB value must be 00-FF'
+       size='2'
+       maxlength='2'>
+  </td>
+  <td align='right'>
+    Green:
+  </td>
+  <td align='center'>
+
+    <cfinput type='text'
+       name='color_b'
+       validate='regex'
+       pattern='[A-Fa-f0-9]{ 2,}'
+       message='RGB value must be 00-FF'
+       size='2'
+       maxlength='2'>
+
+  </td>
+
+</tr>
 
 </cfform>
 

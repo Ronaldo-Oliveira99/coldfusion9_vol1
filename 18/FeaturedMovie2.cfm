@@ -1,5 +1,5 @@
 <!--- 
- Filename: FeaturedMovie.cfm
+ Filename: FeaturedMovie2.cfm
  Created by: Nate Weiss (NMW)
  Purpose: Displays a single movie on the page, on a rotating basis
  Please Note Application variables must be enabled
@@ -8,8 +8,13 @@
 <!--- Need to lock when accessing shared data --->
 <cflock scope='application' type='Exclusive' timeout='10'>
 
+
+  <cfdump  var="#application.movieList#">
+<!---   <cfdump  var="#application.movieList2#"> --->
+
   <!--- List of movies to show (list starts out empty) --->
   <cfparam name='application.movieList' type='string' default=''>
+  <cfparam name='application.movieList2' type='string' default=''>
  
   <!--- If this is the first time we're running this, --->
   <!--- Or we have run out of movies to rotate through --->

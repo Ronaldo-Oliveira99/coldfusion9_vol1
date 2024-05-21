@@ -9,6 +9,13 @@
 <cfparam name='form.userLogin' type='string'>
 <cfparam name='form.userPassword' type='string'>
 
+<!--- <cfdump  var="LoginCheck"><br>
+<cfdump  var="#cgi.script_name#"><br>
+<cfdump  var="#cgi.query_string#">
+<cfabort> --->
+
+
+
 <!--- Find record with this Username/Password --->
 <!--- If no rows returned, password not valid --->
 <cfquery name='getUser'>
@@ -31,5 +38,13 @@
 
  <!--- Now that user is logged in, send them --->
  <!--- to whatever page makes sense to start --->
- <cflocation url='#cgi.script_name#?#cgi.query_string#'>
+
+
+
+<!---  cgi.script_name  é a url da tela original --->
+<!---  cgi.query_string  é os paramentros passados --->
+
+<cfdump  var="#cgi.script_name#"><br>
+<cfdump  var="#cgi.query_string#">
+<cflocation url='#cgi.script_name#?#cgi.query_string#'>
 </cfif>
