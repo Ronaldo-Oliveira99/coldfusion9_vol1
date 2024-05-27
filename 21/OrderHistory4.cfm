@@ -49,6 +49,8 @@
     <cfdump  var="#isUserInAnyRole("teste,admin")#">
     <cfdump  var="#getUserRoles()#">
 
+    <cfdump  var="#session#">
+
 
 
     <!--- If user is currently choosing a different contact from list --->
@@ -64,10 +66,13 @@
     <cfform 
     action='#cgi.script_name#'
     method='POST'>
-    
-        <h2>Order History</h2>
-        Customer:
-        
+
+        <div>
+            <h2>Order History</h2>
+            Customer:
+           <a><span style="float:right">logout</span></a>   
+        </div>
+
         <!--- Get a list of all contacts, for display in drop-down list ---> 
         <cfquery name='getUsers'>
             SELECT ContactID, LastName || ', ' || FirstName AS FullName

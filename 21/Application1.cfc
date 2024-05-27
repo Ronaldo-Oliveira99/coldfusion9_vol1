@@ -21,6 +21,7 @@
 
   <cffunction name='onRequestStart' output='false' returnType='void'>
   
+
     <!--- If user isn't logged in, force them to now ---> 
     <cfif not isDefined('session.auth.isLoggedIn')>
       <!--- If the user is now submitting 'Login' form, --->
