@@ -169,7 +169,7 @@
             <!--- Show Down arrow if expanded, otherwise Right --->
 
             <cfset ArrowDown = 'ArrowDown.gif' >
-                    <cfset ArrowRight = 'ArrowRight.gif' >
+            <cfset ArrowRight = 'ArrowRight.gif' >
 
             <cfset isExpanded = showDetail and (getOrders.OrderID eq URL.orderID)>
             <cfset arrowIcon = iif(isExpanded, 'ArrowDown', 'ArrowRight')>

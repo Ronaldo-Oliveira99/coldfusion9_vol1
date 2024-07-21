@@ -155,10 +155,30 @@
     <cfreturn currentFilmData> 
   </cffunction>
 
+  <cffunction name="getRotationInterval" returntype="numeric" hint="getter for
+  rotationInterval property">
+    <cfreturn this.currentUntil>
+  </cffunction>
+  <!--- setter method for rotationInterval --->
+  <cffunction name="setRotationInterval" returntype="void" hint="setter for
+    rotationInterval property">
+    <cfargument name="newValue" required="yes" type="numeric" hint="new value for
+    rotationInterval property">
+    <cfif isNumeric(arguments.newValue)>
+      <cfset this.currentUntil = arguments.newValue>
+    <cfelse>
+      <cfthrow type="application" message="Invalid value for setrotationInterval: must
+      be numeric">
+    </cfif>
+    <cfreturn>
+  </cffunction>
+
   <cffunction name="teste_this" access="remote" returnType="struct"
   output="false"
   hint="Returns structured data about the currently ÔfeaturedÕ film.">
 
     <cfreturn this> 
   </cffunction>
+
+
 </cfcomponent>

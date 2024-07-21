@@ -31,5 +31,11 @@ numeric, query, string, struct, uuid
 uma tag personalizada. você pode adicionar atributos adicionais a <cfinvoke> ou pode aninhar uma tag  <cfinvokeargument> dentro da tag <cfinvoke>. atributos: component, method, returnVariable, (method arguments), argumentCollection
 O argumento pode ser passado diretamente na tag de cfinvoke, porem pode ser utilizado cfinvokeargument para casos onde o argumento nao é obrigatorio, é uma melhoria em relação ao a tag personalizada onde é necessário codigo para tratar um argumento inexistente.
 
-o método deve usar access=?remote? em sua tag <cffunction>. Caso  contrário, não poderá ser 
-acessado diretamente pela Internet por meio  de um formulário ou URL.
+* o método deve usar access=?remote? em sua tag <cffunction>. Caso  contrário, não poderá ser acessado diretamente pela Internet por meio  de um formulário ou URL.
+
+* O atributo de ACCESS da tag <cffunction> basicamente responde à pergunta: "Quem pode usar esta função?" O atributo possui quatro opções: 
+privado, pacote, público (o padrão) e remoto.
+Estas quatro opções representam, nesta ordem, o grau de abertura da função.
+
+
+* Global Script Protection =>  Chapter 21, ?Securing Your Applications,? in Volume 1.

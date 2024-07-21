@@ -14,12 +14,16 @@
 <!--- If an instance of the FilmRotatorCFC component hasnÕt been created --->
 <!--- yet, create a fresh instance and store it in the APPLICATION scope --->
 <cfif not isDefined("APPLICATION.filmRotator")>
- <cfobject component="FilmRotationCFC" name="APPLICATION.FilmRotator">
+   <!---  <cfset APPLICATION.FilmRotator = new FilmRotationCFC()> --->
+    <cfset APPLICATION.FilmRotatorc = new FilmRotationCFCc(datasource="ows"
+<!--- , rotationInterval = 5 ---> <!--- "#variables.rotationInterval#" --->)>
+    <!--- <cfobject component="FilmRotationCFC" name="APPLICATION.FilmRotator"> --->
 </cfif>
 
 <!--- Invoke the GetCurrentFilmID() method of the FilmRotator CFC object --->
-<cfinvoke component="#APPLICATION.filmRotator#" method="getCurrentFilmID"
- returnVariable="featuredFilmID">
+<!--- <cfinvoke component="#APPLICATION.filmRotator#" method="getCurrentFilmID"
+ returnVariable="featuredFilmID"> --->
+<cfset featuredFilmID = Application.filmRotator.getCurrentFilmID()>
 
 <p>The callout at the right side of this page shows the currently featured film. 
 The featured film changes every five seconds. </p>
