@@ -36,9 +36,9 @@
 <html>
   <head><title>ColdFusion 8: Thread Generator</title></head>
   <body>
-    aaaaaaaa
+
 <cfoutput>
-  aaaaaaaa
+
   <cfloop index="k" from="1" to="#structCount(cfthread)#">
     <cfsilent>
       <!---#### Create a deep copy of the CFTHREAD scope to handle thread variables. ####--->
@@ -46,7 +46,7 @@
     </cfsilent>
     <p>#VARIABLES.demoThread.name#
     <ul id="threadList" type="disc">
-      <li>Status:zzz #VARIABLES.demoThread.status#</li>
+      <li>Status: #VARIABLES.demoThread.status#</li>
       <cfif VARIABLES.demoThread.status neq "NOT_STARTED">
         <li>Started: #VARIABLES.demoThread.starttime#</li>
         <li>Message: #VARIABLES.demoThread.message#</li>
