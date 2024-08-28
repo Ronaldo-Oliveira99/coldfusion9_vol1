@@ -39,3 +39,5 @@ Estas quatro opções representam, nesta ordem, o grau de abertura da função.
 
 
 * Global Script Protection =>  Chapter 21, ?Securing Your Applications,? in Volume 1.
+
+* THREADS =>  ESTUDAR MAIS
