@@ -53,7 +53,8 @@
         <li>Counter value: #VARIABLES.demoThread.ctr#</li>
       </cfif>
       <li>Total Run Time: #VARIABLES.demoThread.elapsedTime#ms</li>
-    </ul><cfflush />
+    </ul>
+    <cfflush />
   </cfloop>
 </cfoutput>
 </body>

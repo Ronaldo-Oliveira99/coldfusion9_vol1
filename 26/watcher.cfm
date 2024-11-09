@@ -44,7 +44,8 @@
 	<cfoutput><p>REQUEST.ctr = #Request.ctr#<br />
 	Thread  spawned at #timeFormat(Variables.demoThread.starttime, "full")#<br />
   Current status: #Variables.demoThread.status# (#Variables.demoThread.elapsedTime#ms)<br />
-  Suspending page thread for #URL.timeout/1000# seconds....</p></cfoutput><cfflush>
+  Suspending page thread for #URL.timeout/1000# seconds....</p></cfoutput>
+    <cfflush>
   
 	<!---#### Suspend page-level thread until timeout is reached. ####--->
   	<cfthread action="join" name="#Variables.demoThread.name#" timeout="#URL.timeout#" />
