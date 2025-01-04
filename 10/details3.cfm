@@ -16,7 +16,7 @@ Created:     01/01/2010
 </cfif>
 
 <!--- Get a movie from database --->
-<cfquery name='movie' datasource='ows' result='result'>
+<cfquery name='movie' datasource='ows_oracle' result='result'>
 SELECT FilmID, MovieTitle,
        PitchText, Summary,
        DateInTheaters, AmountBudgeted

@@ -1,7 +1,7 @@
  <!--- FilmID must be passed in URL --->
  <CFPARAM NAME="URL.FilmID" TYPE="numeric">
  <!--- Retrieve information about films from database --->
-<CFQUERY NAME="GetFilms" DATASOURCE="ows"
+<CFQUERY NAME="GetFilms" datasource="ows_oracle"
     CACHEDWITHIN="#CreateTimeSpan(0,0,15,0)#">
     SELECT FilmID, MovieTitle, PitchText, Summary
     FROM Films

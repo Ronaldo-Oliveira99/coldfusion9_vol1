@@ -12,7 +12,7 @@
   
   <cffunction name="onApplicationStart" returnType="void" 
 			  output="false">
-    <cfset APPLICATION.dataSource="ows">
+    <cfset APPLICATION.datasource="ows_oracle">
   </cffunction>  
 
 </cfcomponent>

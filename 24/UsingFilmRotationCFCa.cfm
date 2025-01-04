@@ -11,11 +11,11 @@
 
 <body>
 
-<!--- If an instance of the FilmRotatorCFC component hasnÕt been created --->
+<!--- If an instance of the FilmRotatorCFC component hasnï¿½t been created --->
 <!--- yet, create a fresh instance and store it in the APPLICATION scope --->
 <cfif not isDefined("APPLICATION.filmRotator")>
    <!---  <cfset APPLICATION.FilmRotator = new FilmRotationCFC()> --->
-    <cfset APPLICATION.FilmRotatorc = new FilmRotationCFCc(datasource="ows"
+    <cfset APPLICATION.FilmRotatorc = new FilmRotationCFCc(datasource="ows_oracle"
 <!--- , rotationInterval = 5 ---> <!--- "#variables.rotationInterval#" --->)>
     <!--- <cfobject component="FilmRotationCFC" name="APPLICATION.FilmRotator"> --->
 </cfif>

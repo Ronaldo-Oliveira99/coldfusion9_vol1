@@ -11,7 +11,7 @@
   <!--- Turn on session management. --->
   <cfset this.sessionManagement=true>
   <!--- Default datasource --->   
-  <cfset this.dataSource='ows'>  
+  <cfset this.datasource='ows_oracle'>  
 
   <cffunction name='onApplicationStart' output='false' returnType='void'>
 

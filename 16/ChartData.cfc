@@ -12,7 +12,7 @@ Created:     01/01/2010
 <cffunction name='GetBudgetData' returntype='query' output='no'>
  <cfargument name='maxrows' type='numeric' default='-1'>
  <cfquery name='budget'
-          datasource='ows'
+          datasource='ows_oracle'
           maxrows='#maxrows#'>
   SELECT FilmID, MovieTitle, AmountBudgeted
   FROM Films
@@ -27,7 +27,7 @@ Created:     01/01/2010
 <cffunction name='GetExpenses' returntype='query' output='no'>
  <cfargument name='maxrows' type='numeric' default='-1'>
  <cfquery name='expenses'
-          datasource='ows'
+          datasource='ows_oracle'
           maxrows='#maxrows#'>
   SELECT FilmID, MovieTitle, AmountBudgeted,
         (SELECT SUM(ExpenseAmount)
@@ -45,7 +45,7 @@ Created:     01/01/2010
 <cffunction name='GetFilmID' returntype='numeric' output='no'>
  <cfargument name='MovieTitle' type='string' required='yes'>
  <cfset var result=-1>
- <cfquery name='movie' datasource='ows'>
+ <cfquery name='movie' datasource='ows_oracle'>
   SELECT FilmID
   FROM Films
   WHERE MovieTitle = '#ARGUMENTS.MovieTitle#'
@@ -62,7 +62,7 @@ Created:     01/01/2010
 <cffunction name='GetExpenseDetails' returntype='query' output='no'>
  <cfargument name='FilmID' type='numeric' required='yes'>
  <cfquery name='expenses'
-          datasource='ows'>
+          datasource='ows_oracle'>
   SELECT * FROM Expenses
   WHERE FilmID = #ARGUMENTS.FilmID#
   ORDER BY ExpenseDate

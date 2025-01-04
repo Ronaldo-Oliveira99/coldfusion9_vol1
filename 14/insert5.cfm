@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Get ratings --->
-<cfquery datasource='ows' name='ratings'>
+<cfquery datasource='ows_oracle' name='ratings'>
 SELECT RatingID, Rating
 FROM FilmsRatings
 ORDER BY RatingID

@@ -8,7 +8,7 @@ Created:     01/01/2010
 <cfcomponent hint='OWS movie database access'>
 
        <!--- Set the datsources --->
-       <cfset ds='ows'>
+       <cfset ds="ows_oracle">
 
 
        <!--- Get movie list --->

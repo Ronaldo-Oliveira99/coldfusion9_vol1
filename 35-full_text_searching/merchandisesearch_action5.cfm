@@ -24,7 +24,7 @@ Date created:  01/05/2005
           criteria="#TheCriteria#">
 
 <!--- Get --->
-<cfquery name="GetPrices" datasource="ows">
+<cfquery name="GetPrices" datasource="ows_oracle">
  SELECT MerchID, MerchDescription, MerchPrice
  FROM Merchandise
  WHERE MerchID IN (#ValueList(GetResults.Key)#)

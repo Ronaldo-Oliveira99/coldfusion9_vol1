@@ -5,7 +5,7 @@ Description: Invoke a ColdFusion report
 Created:     01/01/2010
 --->
 
-<cfquery name='Expenses' datasource='ows'>
+<cfquery name='Expenses' datasource='ows_oracle'>
 SELECT    Films.MovieTitle, Expenses.ExpenseDate,
           Expenses.Description,
           Expenses.ExpenseAmount

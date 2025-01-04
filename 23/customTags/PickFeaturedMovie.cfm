@@ -5,8 +5,8 @@
 --->
 
 <!--- Tag Attributes ---> 
-<!--- Use ?"ows" datasource by default ---> 
-<cfparam name="attributes.dataSource" type="string" default="ows">
+<!--- Use ?"ows_oracle" datasource by default ---> 
+<cfparam name="attributes.dataSource" type="string" default="ows_oracle">
 
 <!--- variable name to return selected FilmID as --->
 

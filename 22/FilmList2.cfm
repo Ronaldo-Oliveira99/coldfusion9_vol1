@@ -8,7 +8,7 @@
  <cfinclude template="FilmFunctions1.cfm">
 
 <!--- Get a list of all FilmIDs --->
-<cfquery name='getFilms' datasource='ows'>
+<cfquery name='getFilms' datasource='ows_oracle'>
     SELECT FilmID
     FROM Films
 </cfquery>

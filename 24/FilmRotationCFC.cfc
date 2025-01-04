@@ -40,11 +40,11 @@
   output="false"
   hint="For internal use. Returns a list of all Film IDs, in random order.">
   
-    <!--- This variable is for this functionÕs use only --->
+    <!--- This variable is for this functionï¿½s use only --->
     <cfset var getFilmIDs = "">
     
     <!--- Retrieve list of current films from database --->
-    <cfquery name="getFilmIDs" datasource="ows" 
+    <cfquery name="getFilmIDs" datasource="ows_oracle" 
       cachedwithin="#CreateTimeSpan(0,1,0,0)#">
       SELECT FilmID FROM Films
       ORDER BY MovieTitle
@@ -63,7 +63,7 @@
     <cfargument name="list" type="string" required="Yes"
     hint="The string that you want to randomize.">
     
-    <!--- These variables are for this functionÕs use only ---> 
+    <!--- These variables are for this functionï¿½s use only ---> 
     <cfset var result = "">
     <cfset var randPos = "">
     
@@ -126,7 +126,7 @@
   <!--- Public method: GetCurrentFilmID() --->
   <cffunction name="getCurrentFilmID" access="public" returnType="numeric"
   output="false"
-  hint="Returns the ID number of the currently ÔfeaturedÕ film.">
+  hint="Returns the ID number of the currently ï¿½featuredï¿½ film.">
     <!--- First, rotate the current film --->
 
   
@@ -141,13 +141,13 @@
   <!--- Public method: GetCurrentFilmData() --->
   <cffunction name="getCurrentFilmData" access="remote" returnType="struct"
   output="false"
-  hint="Returns structured data about the currently ÔfeaturedÕ film.">
+  hint="Returns structured data about the currently ï¿½featuredï¿½ film.">
   
     <!--- This variable is local just to this function --->
     <cfset var currentFilmData = "">
     
     <!--- Invoke the GetCurrentFilmID() method (in separate component) --->
-    <!--- Returns a structure with filmÕs title, summary, actors, etc. --->
+    <!--- Returns a structure with filmï¿½s title, summary, actors, etc. --->
     <cfinvoke component="FilmDataCFC2" method="getFilmData"
     filmID="#getCurrentFilmID()#" returnVariable="currentFilmData">
     
@@ -157,7 +157,7 @@
 
   <cffunction name="teste_this" access="remote" returnType="struct"
   output="false"
-  hint="Returns structured data about the currently ÔfeaturedÕ film.">
+  hint="Returns structured data about the currently ï¿½featuredï¿½ film.">
 
     <cfreturn this> 
   </cffunction>

@@ -14,7 +14,7 @@
     <cfset var filmsQuery = "">
     <!--- Query the database for information about all films --->
     <!--- The query is cached to improve performance --->
-    <cfquery name="filmsQuery" datasource="ows" cachedwithin="#createTimespan(0,1,0,0)#">
+    <cfquery name="filmsQuery" datasource="ows_oracle" cachedwithin="#createTimespan(0,1,0,0)#">
         SELECT * FROM Films
         <!--- If a FilmID argument was provided, select that film only --->
         <cfif isDefined("arguments.filmID")>

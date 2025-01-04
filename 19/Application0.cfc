@@ -7,15 +7,15 @@
 <cfcomponent output='false'>
 
   <cfset this.name='OrangeWhipSite'>
-  <!--- sessionManagement : habilita variaveis de sessão --->
+  <!--- sessionManagement : habilita variaveis de sessï¿½o --->
   <cfset this.sessionManagement=true>
 
   <!--- setDomainCookies :  Isso  faz  com  que  o  ColdFusion  configure  o  cookie  CFID  de  forma  que  ele  seja  
-        compartilhado  entre  todos  os  servidores  no  mesmo  domínio  da  Internet --->
+        compartilhado  entre  todos  os  servidores  no  mesmo  domï¿½nio  da  Internet --->
     <cfset this.setDomainCookies=true>
 
 
-  <cfset this.dataSource='ows'>
+  <cfset this.datasource='ows_oracle'>
   
   <cfparam  name='cookie.VisitStart'  type='date'  default='#now()#'>
 

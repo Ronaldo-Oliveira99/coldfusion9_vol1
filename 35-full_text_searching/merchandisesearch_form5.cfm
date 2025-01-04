@@ -7,7 +7,7 @@ Date created:  01/05/2005
 --->
 
 <!--- Get the movie titles for drop down list --->
-<cfquery NAME="GetFilms" datasource="ows">
+<cfquery NAME="GetFilms" datasource="ows_oracle">
  SELECT FilmID, MovieTitle
  FROM Films
 </cfquery>

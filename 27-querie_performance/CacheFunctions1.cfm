@@ -8,7 +8,7 @@
 
 <cfif isNull(films)>
    <cfset sleep(2000)>
-    <cfquery name="films" datasource="ows">
+    <cfquery name="films" datasource="ows_oracle">
         SELECT FilmID, MovieTitle FROM Films
     </cfquery>
    <cfset cachePut("films",films)>

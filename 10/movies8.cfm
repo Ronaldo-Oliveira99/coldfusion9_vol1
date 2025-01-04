@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Get movie list from database --->
-<cfquery name='movies' datasource='ows' result='result'>
+<cfquery name='movies' datasource='ows_oracle' result='result'>
 SELECT FilmID, MovieTitle, PitchText,
        Summary, DateInTheaters
 FROM Films 

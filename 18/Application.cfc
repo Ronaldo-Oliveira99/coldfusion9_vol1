@@ -7,7 +7,7 @@
 <cfcomponent output='false'>
 
   <cfset this.name = 'ows19'>
-  <cfset this.dataSource = 'ows'>
+  <cfset this.dataSource = "ows_oracle">
 
   <cferror type='Request' template='ErrorRequest.cfm' 
            mailto='webmaster@orangewhipstudios.com'>

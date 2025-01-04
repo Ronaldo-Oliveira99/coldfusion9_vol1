@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Insert movie --->
-<cfinsert datasource='ows'
+<cfinsert datasource='ows_oracle'
           tablename='FILMS'
           formfields='MovieTitle,
                       PitchText,

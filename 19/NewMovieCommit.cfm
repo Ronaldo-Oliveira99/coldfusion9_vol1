@@ -38,7 +38,7 @@
 <!--- Insert actor records --->
 <cfloop list='#session.movWiz.actorIDs#' index='thisActor'>
   <cfset isStar = thisActor eq session.movWiz.starActorId?1:0>
-  <cfquery datasource='ows'>
+  <cfquery datasource='ows_oracle'>
       INSERT INTO FilmsActors(FilmID, ActorID, Salary, IsStarringRole)
       VALUES (
       <cfqueryparam cfsqltype='cf_sql_integer' value='#newID#'>,

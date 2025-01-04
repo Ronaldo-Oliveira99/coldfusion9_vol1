@@ -4,7 +4,7 @@
  Purpose: Creates FilmSearchCFC, a simple ColdFusion Component
 --->
 <!--- The <CFCOMPONENT> block defines the CFC --->
-<!--- The filename of this file determines the CFCÕs name --->
+<!--- The filename of this file determines the CFCï¿½s name --->
 <cfcomponent output="yes"  hint="Search and display films">
 
   <!--- ListFilms() method --->
@@ -17,7 +17,7 @@
     <cfset var getFilms = "">
     <!--- Run the query ---> 
 
-    <cfquery name="getFilms" datasource="ows">
+    <cfquery name="getFilms" datasource="ows_oracle">
       SELECT FilmID, MovieTitle FROM Films
       <!--- If a search string has been specified --->
       <cfif ARGUMENTS.searchString neq "">
@@ -41,7 +41,7 @@
     <cfset var getFilms = "">
     <!--- Run the query ---> 
 
-    <cfquery name="getFilms" datasource="ows">
+    <cfquery name="getFilms" datasource="ows_oracle">
       SELECT FilmID, MovieTitle FROM Films
       <!--- If a search string has been specified --->
       <cfif ARGUMENTS.searchString neq "">

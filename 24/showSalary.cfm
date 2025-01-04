@@ -28,7 +28,7 @@
 </cfinvoke> --->
 
 
-<cfset cfcActor = new actor(datasource="ows")> 
+<cfset cfcActor = new actor(datasource="ows_oracle")> 
 <cfset salaryHistory = cfcActor.getActorSalary(17)>
 
 

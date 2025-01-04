@@ -7,7 +7,7 @@ Author:Raymond Camden
  Getting data ...<br>
 
  <!--- Retrieve all merchandise to be searched --->
- <cfquery name="getresults" datasource="ows">
+ <cfquery name="getresults" datasource="ows_oracle">
      select merchid, merchname, merchdescription, merchprice
      from merchandise
  </cfquery>

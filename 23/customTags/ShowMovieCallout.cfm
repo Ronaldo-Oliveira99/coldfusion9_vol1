@@ -4,7 +4,7 @@
  
  Example of Use:
  <cf_ShowMovieCallout
- FilmID=Ó5Ó>
+ FilmID=ï¿½5ï¿½>
 --->
 
 <!--- Tag Attributes --->
@@ -17,8 +17,8 @@
 <cfparam name="ATTRIBUTES.tableAlign" type="string" default="right">
 <cfparam name="ATTRIBUTES.tableWidth" type="string" default="150">
 <cfparam name="ATTRIBUTES.caption" type="string" default="Featured Film">
-<!--- Use Òows" datasource by default --->
-<cfparam name="ATTRIBUTES.DataSource" type="string" default="ows">
+<!--- Use ï¿½ows" datasource by default --->
+<cfparam name="ATTRIBUTES.DataSource" type="string" default="ows_oracle">
 
 <!--- Get important info about film from database --->
 <cfquery name="getFilm" datasource="#ATTRIBUTES.dataSource#">

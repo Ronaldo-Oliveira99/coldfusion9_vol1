@@ -5,7 +5,7 @@ Description:   Queries database and generates email
 --->
 
 <!--- Get all merchandise info from database --->
-<cfquery name="GetMerchInfo" datasource="OWS">
+<cfquery name="GetMerchInfo" datasource="ows_oracle">
 	SELECT MerchName, MerchDescription, MerchPrice
 	FROM Merchandise
 	ORDER BY FilmID

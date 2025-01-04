@@ -12,7 +12,7 @@ Created:     01/01/2010
 </cfif>
 
 <!--- Get the film record --->
-<cfquery datasource='ows' name='film'>
+<cfquery datasource='ows_oracle' name='film'>
 SELECT FilmID, MovieTitle, PitchText,
     AmountBudgeted, RatingID,
     Summary, ImageName, DateInTheaters
@@ -21,7 +21,7 @@ WHERE FilmID=#URL.FilmID#
 </cfquery>
 
 <!--- Get ratings --->
-<cfquery datasource='ows' name='ratings'>
+<cfquery datasource='ows_oracle' name='ratings'>
 SELECT RatingID, Rating
 FROM FilmsRatings
 ORDER BY RatingID

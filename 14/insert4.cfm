@@ -8,7 +8,7 @@ Created:     01/01/2010
 <cfabort> --->
 
 <!--- Insert movie --->
-<cfinsert datasource='ows'
+<cfinsert datasource='ows_oracle'
           tablename='FILMS'>
 
 <!--- Page header --->

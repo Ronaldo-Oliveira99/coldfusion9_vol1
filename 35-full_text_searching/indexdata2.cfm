@@ -20,7 +20,7 @@ Getting data ...<br>
 <cfflush>
 
 <!--- Retrieve all merchandise to be searched --->
-<cfquery name="getresults" datasource="ows">
+<cfquery name="getresults" datasource="ows_oracle">
  select merchid, merchname, merchdescription
  from merchandise
 </cfquery>

@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Get movie list --->
-<cfquery datasource='ows' name='movies'>
+<cfquery datasource='ows_oracle' name='movies'>
 SELECT FilmID, MovieTitle
 FROM Films
 ORDER BY MovieTitle

@@ -8,7 +8,7 @@
   <cfset var movies=''>
 
   <!--- Get movie list from database --->
-  <cfquery name='movies' datasource='ows'>
+  <cfquery name='movies' datasource='ows_oracle'>
   SELECT FilmID, MovieTitle, PitchText,
          Summary, DateInTheaters
   FROM Films 
@@ -27,7 +27,7 @@
   <cfset var movie=''>
 
   <!--- Get a movie from database --->
-  <cfquery name='movie' datasource='ows'>
+  <cfquery name='movie' datasource='ows_oracle'>
   SELECT FilmID, MovieTitle,
          PitchText, Summary,
          DateInTheaters, AmountBudgeted

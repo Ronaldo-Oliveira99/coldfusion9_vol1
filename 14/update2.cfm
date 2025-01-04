@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Update movie --->
-<cfquery datasource='ows'>
+<cfquery datasource='ows_oracle'>
 UPDATE Films
 SET MovieTitle='#Trim(FORM.MovieTitle)#',
     PitchText='#Trim(FORM.PitchText)#',

@@ -10,6 +10,6 @@
 
   <!--- clientManagement : habilita variaveis de cliente --->
   <cfset this.clientManagement=true>
-  <cfset this.dataSource='ows'>
+  <cfset this.datasource='ows_oracle'>
   
 </cfcomponent>

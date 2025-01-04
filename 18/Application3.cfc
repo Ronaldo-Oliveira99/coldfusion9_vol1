@@ -7,7 +7,7 @@
 <cfcomponent output='false'>
 
   <cfset this.name = 'ows18'>
-  <cfset this.dataSource = 'ows'>
+  <cfset this.dataSource = "ows_oracle">
   
   <cffunction name='onApplicationStart' returnType='boolean' output='false'>
     <!--- When did the application start? --->

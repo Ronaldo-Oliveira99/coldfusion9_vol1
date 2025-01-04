@@ -8,7 +8,7 @@ Date created:  01/05/2005
 --->
 
 <!--- Execute SQL query to do the searching --->
-<cfquery name="GetResults" datasource="ows">
+<cfquery name="GetResults" datasource="ows_oracle">
   SELECT MerchID, MerchDescription
   FROM Merchandise
   WHERE (MerchDescription LIKE '%#Form.Criteria#%')

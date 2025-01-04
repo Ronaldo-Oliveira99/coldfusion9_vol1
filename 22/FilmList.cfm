@@ -10,7 +10,7 @@
     <!--- This variable is for this function?s use only --->
     <cfset var getFilm = ''>
     <!--- Get the film?s title --->
-    <cfquery name='getFilm' datasource='ows' cachedwithin='#createTimespan(0,1,0,0)#'>
+    <cfquery name='getFilm' datasource='ows_oracle' cachedwithin='#createTimespan(0,1,0,0)#'>
         SELECT MovieTitle FROM Films
         WHERE FilmID = <cfqueryparam cfsqltype='cf_sql_integer' value='#arguments.filmID#'>
     </cfquery>
@@ -18,7 +18,7 @@
     <cfreturn getFilm.MovieTitle>
 </cffunction>
     <!--- Get a list of all FilmIDs --->
-    <cfquery name='getFilms' datasource='ows'>
+    <cfquery name='getFilms' datasource='ows_oracle'>
         SELECT FilmID
         FROM Films
     </cfquery>

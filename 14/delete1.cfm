@@ -12,7 +12,7 @@ Created:     01/01/2010
 </cfif>
 
 <!--- Delete a movie --->
-<cfquery datasource='ows'>
+<cfquery datasource='ows_oracle'>
 DELETE FROM Films
 WHERE FilmID=#FilmID#
 </cfquery>

@@ -8,8 +8,8 @@
 
   <cfset this.name='OrangeWhipSite'>
 
-  <!--- sessionManagement : habilita variaveis de sessão --->
+  <!--- sessionManagement : habilita variaveis de sessï¿½o --->
   <cfset this.sessionManagement=true>
-  <cfset this.dataSource='ows'>
+  <cfset this.datasource='ows_oracle'>
   
 </cfcomponent>

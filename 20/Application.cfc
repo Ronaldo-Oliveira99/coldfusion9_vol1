@@ -8,7 +8,7 @@
 
   <!--- Name the application. --->
   <cfset this.name='OrangeWhipSite'>
-  <cfset this.dataSource = 'ows'>
+  <cfset this.dataSource = "ows_oracle">
   <!--- Turn on session management. --->
   <cfset this.sessionManagement=true>
   <cfset this.clientManagement=true>

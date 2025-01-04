@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Insert movie --->
-<cfquery datasource='ows'>
+<cfquery datasource='ows_oracle'>
 INSERT INTO Films(MovieTitle,
                   PitchText,
                   AmountBudgeted,

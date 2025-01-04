@@ -73,7 +73,7 @@
  <!--- Step One: Movie Title --->
     <cfcase value='1'>
     <!--- Get potential film ratings from database --->
-        <cfquery name='getRatings' datasource='ows'>
+        <cfquery name='getRatings' datasource='ows_oracle'>
             SELECT RatingID, Rating
             FROM FilmsRatings
             ORDER BY RatingID
@@ -131,7 +131,7 @@
     <!--- Step Three: Pick Actors --->
     <cfcase value='3'>
         <!--- get list of actors from database --->
-        <cfquery name='getActors' datasource='ows'>
+        <cfquery name='getActors' datasource='ows_oracle'>
         SELECT * FROM Actors
         ORDER BY NameLast
         </cfquery>
@@ -159,7 +159,7 @@
             actor or actress to be in the movie. 
         <cfelse>
             <!--- Get actors who are in the film --->
-            <cfquery name='getActors' DATASOURCE='ows'>
+            <cfquery name='getActors' datasource='ows_oracle'>
             SELECT * FROM Actors
             WHERE ActorID IN (#session.movWiz.ActorIDs#)
             ORDER BY NameLast

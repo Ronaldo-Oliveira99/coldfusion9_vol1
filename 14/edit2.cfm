@@ -10,11 +10,11 @@ Created:     01/01/2010
 
 <cfif EditMode>
  <!--- Update movie --->
- <cfupdate datasource='ows' tablename='FILMS'>
+ <cfupdate datasource='ows_oracle' tablename='FILMS'>
  <cfset action='updated'>
 <cfelse>
  <!--- Add movie --->
- <cfinsert datasource='ows' tablename='FILMS'>
+ <cfinsert datasource='ows_oracle' tablename='FILMS'>
  <cfset action='added'>
 </cfif>
 

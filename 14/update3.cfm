@@ -6,7 +6,7 @@ Created:     01/01/2010
 --->
 
 <!--- Update movie --->
-<cfupdate datasource='ows'
+<cfupdate datasource='ows_oracle'
           tablename='FILMS'>
 
 <!--- Page header --->

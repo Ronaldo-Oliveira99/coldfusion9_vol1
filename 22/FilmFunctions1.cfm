@@ -11,7 +11,7 @@
     <!--- This variable is for this function?s use only --->
     <cfset var getFilm = "">
     <!--- Get the film?s title --->
-    <cfquery name="getFilm" datasource="ows" cachedwithin="#createTimespan(0,1,0,0)#">
+    <cfquery name="getFilm" datasource="ows_oracle" cachedwithin="#createTimespan(0,1,0,0)#">
         SELECT MovieTitle FROM Films
         WHERE FilmID = <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.filmID#">
     </cfquery>

@@ -14,7 +14,7 @@
   <cffunction name="onApplicationStart" output="false" returnType="void">
 
     <!--- Any variables set here can be used by all our pages --->
-    <cfset APPLICATION.dataSource = "ows">
+    <cfset APPLICATION.dataSource = "ows_oracle">
     <cfset APPLICATION.companyName = "Orange Whip Studios">
   
   </cffunction>
